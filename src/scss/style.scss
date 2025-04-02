@@ -1,0 +1,14 @@
+// Plugins
+@use "plugins/fontawesome.min";
+
+// Base
+@use "assets/reset";
+@use "assets/variables";
+@use "assets/fonts";
+@use "assets/global";
+
+// Media
+@use "media";
+
+// Главные стили
+@use "main";
