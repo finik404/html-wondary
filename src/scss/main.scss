@@ -1,13 +1,91 @@
 @use "./assets/variables.scss" as vars;
 
+
+.header {
+    padding: 20px 0;
+}
+
+.main {
+    position: relative;
+
+    .box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 150px 100px;
+    }
+
+    .content {
+        width: 450px;
+
+        .pretitle {
+            font-size: 12px;
+        }
+
+        h2 {
+            font-size: 40px;
+            line-height: 52px;
+            margin-bottom: 20px;
+        }
+
+        .text {
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            user-select: none;
+            background-color: vars.$main;
+            padding: 12px 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+            font-size: 16px !important;
+            line-height: 24px !important;
+            color: vars.$bg;
+            font-weight: 700;
+
+            &:hover {
+                background-color: #02AA73;
+                text-decoration: none;
+            }
+
+            &:focus {
+                background-color: #02AA73;
+            }
+
+        }
+    }
+
+    .screen1 {
+        position: relative;
+        width: 230px;
+        z-index: -1;
+    }
+
+    .pattern1 {
+        position: absolute;
+        right: -350px;
+        top: -50px;
+        z-index: -10;
+    }
+
+    .pattern2 {
+        position: absolute;
+        left: -50px;
+        bottom: 100px;
+        z-index: -10;
+    }
+
+}
+
 .download {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     margin-bottom: 200px;
-    height: 400px;
+    height: 600px;
     z-index: 10;
+    padding-top: 200px;
 
     .content {
         width: 450px;
@@ -102,7 +180,13 @@
             font-size: 20px;
             line-height: 32px;
             color: vars.$white;
+
+            &:hover {
+                text-decoration: none;
+                color: vars.$main;
+            }
         }
+
         a:first-child {
             margin-right: 15px;
         }
@@ -111,6 +195,13 @@
     .support {
         color: rgba(vars.$white, 0.75);
         text-align: end;
+
+        a {
+            color: vars.$main;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     .pattern {

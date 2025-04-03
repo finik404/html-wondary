@@ -29,10 +29,10 @@ body {
 }
 
 a {
-  color: vars.$main;
+  color: vars.$white;
   transition: 0.2s;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -67,35 +67,6 @@ a {
 
 .disabled {
   pointer-events: none;
-}
-
-// Buttons
-.btn {
-  user-select: none;
-  background-color: vars.$main;
-  padding: 14px 30px;
-  border-radius: 2px;
-  transition: 0.3s;
-  font-size: 16px !important;
-  line-height: 24px !important;
-  &:hover {
-    background-color: vars.$main;
-  }
-  &.disabled {
-    pointer-events: none;
-    opacity: 0.5;
-  }
-  &:focus {
-    background-color: vars.$main;
-  }
-}
-
-a.btn {
-  color: vars.$main;
-  text-align: center;
-  &:hover {
-    text-decoration: none;
-  }
 }
 
 // Модальные окна
