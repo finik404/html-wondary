@@ -1,76 +1,97 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<!-- Meta -->
-@@include('./blocks/main/head.html', {
-"title": "Главная",
+    <!-- Meta -->
+    @@include('./blocks/main/head.html', {
+"title": "Wondary: Учить редкие и интереcные слова",
 })
-
-<body>
-    <div class="container">
-        @@include('./blocks/header.html')
-
-        <!-- Main Section -->
-        <section class="main">
-            <div class="box">
-                <!-- img -->
-                <img src="./img/screens/learning.png" alt="screen1" class="screen screen1">
-
+    <body>
+        <img src="./img/main_pattern.png" alt="pattern" class="bg_pattern">
+        <div class="container">
+            @@include('./blocks/header.html')
+            <!-- Main Section -->
+            <section class="main">
+                <div class="box">
+                    <!-- img -->
+                    <img src="./img/screens/learning.png" alt="screen1" class="screen screen1">
+                    <!-- content -->
+                    <div class="content">
+                        <p class="pretitle">Сила языка</p>
+                        <h2>Запоминай редкие слова с пользой и интересом</h2>
+                        <p class="text">
+                            Приложение для тех, кто хочет говорить точнее, ярче и умнее.
+                        Никакой скуки — только интересные слова
+                        </p>
+                        <a href="#download" class="btn">Скачать</a>
+                    </div>
+                </div>
+                <!-- patterns -->
+                <div class="patterns">
+                    <img src="./img/patterns/01.svg" alt="pattern1" class="pattern1">
+                    <img src="./img/patterns/02.svg" alt="pattern2" class="pattern2">
+                </div>
+            </section>
+            <!-- Benefits Section -->
+            <section class="benefits">
+                <h2>Почему это приложение?</h2>
+                <p class="text">Ключевые преимущества, которые делают обучение эффективным</p>
+                <div class="list">
+                    @@include('./blocks/benefit.html', {
+                "icon": "./img/benefits/01.svg",
+                "title": "Большая база слов",
+                "text": "Интересные слова из множества тематических категорий",
+                })
+                @@include('./blocks/benefit.html', {
+                "icon": "./img/benefits/02.svg",
+                "title": "Подробная статистика",
+                "text": "Следите за своим прогрессом и анализируйте свою активность",
+                })
+                @@include('./blocks/benefit.html', {
+                "icon": "./img/benefits/03.svg",
+                "title": "Гибкие настройки",
+                "text": "Настройте приложение под себя для комфортного изучения",
+                })
+                @@include('./blocks/benefit.html', {
+                "icon": "./img/benefits/04.svg",
+                "title": "Различные тренировки",
+                "text": "Комбинируйте разные методы, чтобы учить слова быстрее",
+                })
+                </div>
+            </section>
+            <!-- Download Section -->
+            <section class="download" id="download">
                 <!-- content -->
                 <div class="content">
-                    <p class="pretitle">Сила языка</p>
-                    <h2>Запоминай редкие слова с пользой и интересом</h2>
-                    <p class="text">Приложение для тех, кто хочет говорить точнее, ярче и умнее.
-                        Никакой скуки — только интересные слова</p>
-                    <a href="#download" class="btn">Скачать</a>
-                </div>
-            </div>
-
-            <!-- patterns -->
-            <div class="patterns">
-                <img src="./img/patterns/01.svg" alt="pattern1" class="pattern1">
-                <img src="./img/patterns/02.svg" alt="pattern2" class="pattern2">
-            </div>
-        </section>
-
-        <!-- Download Section -->
-        <section class="download" id="download">
-            <!-- content -->
-            <div class="content">
-                <h1>Скачать приложение</h1>
-                <p class="download_content-text">Изучайте редкие и интересные слова в любое время и в любом месте.
+                    <h1>Скачать приложение</h1>
+                    <p class="download_content-text">
+                        Изучайте редкие и интересные слова в любое время и в любом месте.
                     Скачайте Wondary на ваше устройство
-                    и начните пополнять словарный запас уже сегодня!</p>
-                <div class="buttons">
-                    @@include('./blocks/download-btn.html', {
+                    и начните пополнять словарный запас уже сегодня!
+                    </p>
+                    <div class="buttons">
+                        @@include('./blocks/download-btn.html', {
                     "label": "Google Play",
                     "icon": "./img/stores/google-play.svg",
                     })
-                    <!-- @@include('./blocks/download-btn.html', {
+                        <!-- @@include('./blocks/download-btn.html', {
                     "label": "RuStore",
                     "icon": "./img/stores/rustore.svg",
                     }) -->
+                    </div>
                 </div>
-            </div>
-
-            <!-- images -->
-            <div class="images">
-                <img src="./img/screens/stats.png" alt="screen2" class="screen screen2">
-                <img src="./img/screens/categories.png" alt="screen3" class="screen screen3">
-            </div>
-
-            <!-- patterns -->
-            <div class="patterns">
-                <img src="./img/patterns/03.svg" alt="pattern3" class="pattern3">
-                <img src="./img/patterns/04.svg" alt="pattern4" class="pattern4">
-            </div>
-        </section>
-    </div>
-
-    @@include('./blocks/footer.html')
-
-    <!-- Scripts -->
-    @@include('./blocks/main/js.html')
-</body>
-
+                <!-- images -->
+                <div class="images">
+                    <img src="./img/screens/stats.png" alt="screen2" class="screen screen2">
+                    <img src="./img/screens/categories.png" alt="screen3" class="screen screen3">
+                </div>
+                <!-- patterns -->
+                <div class="patterns">
+                    <img src="./img/patterns/03.svg" alt="pattern3" class="pattern3">
+                    <img src="./img/patterns/04.svg" alt="pattern4" class="pattern4">
+                </div>
+            </section>
+        </div>
+        @@include('./blocks/footer.html')
+        <!-- Scripts -->
+        @@include('./blocks/main/js.html')
+    </body>
 </html>
