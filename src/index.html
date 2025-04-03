@@ -12,13 +12,22 @@
 
         <!-- Download Section -->
         <section class="download">
+
             <!-- content -->
             <div class="content">
                 <h1>Скачать приложение</h1>
-                <p>Изучайте редкие и интересные слова в любое время и в любом месте. Скачайте Wondary на ваше устройство
+                <p class="download_content-text">Изучайте редкие и интересные слова в любое время и в любом месте.
+                    Скачайте Wondary на ваше устройство
                     и начните пополнять словарный запас уже сегодня!</p>
                 <div class="buttons">
-
+                    @@include('./blocks/download-btn.html', {
+                    "label": "Google Play",
+                    "icon": "./img/stores/google-play.svg",
+                    })
+                    <!-- @@include('./blocks/download-btn.html', {
+                    "label": "RuStore",
+                    "icon": "./img/stores/rustore.svg",
+                    }) -->
                 </div>
             </div>
 
@@ -34,13 +43,12 @@
                 <img src="./img/patterns/04.svg" alt="pattern4" class="pattern4">
             </div>
         </section>
-
-
-        @@include('./blocks/footer.html')
-
-        <!-- Scripts -->
-        @@include('./blocks/main/js.html')
     </div>
+
+    @@include('./blocks/footer.html')
+
+    <!-- Scripts -->
+    @@include('./blocks/main/js.html')
 </body>
 
 </html>

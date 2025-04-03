@@ -1,21 +1,123 @@
+@use "./assets/variables.scss" as vars;
+
 .download {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 200px;
+    height: 400px;
+    z-index: 10;
+
     .content {
+        width: 450px;
+
         h1 {
             font-size: 60px;
-            margin-bottom: 20;
-        }
-
-        p {
-            margin-bottom: 50px;
+            line-height: 62px;
+            margin-bottom: 20px;
         }
     }
+
+    .download_content-text {
+        margin-bottom: 35px;
+    }
+
     .images {
+        position: relative;
+
         .screen2 {
+            position: relative;
             width: 255px;
+            z-index: 10;
         }
+
         .screen3 {
+            z-index: 0;
+            position: absolute;
+            top: 50px;
+            right: -150px;
             width: 225px;
-            transform: rotate(-18rad);
+            transform: rotate(18deg);
         }
+    }
+
+    .pattern3 {
+        position: absolute;
+        left: -300px;
+        top: -100px;
+        z-index: -10;
+    }
+
+    .pattern4 {
+        position: absolute;
+        right: -100px;
+        bottom: -250px;
+        z-index: -10;
+    }
+}
+
+.download_btn {
+    background-color: black;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(vars.$white, 0.3);
+
+    img {
+        width: 30px;
+        height: 30px;
+        margin-right: 7px;
+    }
+
+    .download_btn-pretitle {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
+
+.footer {
+    overflow: hidden;
+    background-color: #212830;
+    position: relative;
+
+    .logo {
+        width: 180px;
+        height: 60px;
+    }
+
+    .box {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 285px;
+        padding-bottom: 35px;
+    }
+
+    .list {
+        display: flex;
+        margin-bottom: 10px;
+
+        a {
+            font-size: 20px;
+            line-height: 32px;
+            color: vars.$white;
+        }
+        a:first-child {
+            margin-right: 15px;
+        }
+    }
+
+    .support {
+        color: rgba(vars.$white, 0.75);
+        text-align: end;
+    }
+
+    .pattern {
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        filter: drop-shadow(0px 11px 50px rgba(#000000, 0.25));
     }
 }
