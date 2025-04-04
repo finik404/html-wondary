@@ -26,6 +26,10 @@ body {
   line-height: 24px;
   color: vars.$white;
   background: vars.$bg;
+  &.hidden-before-init {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 a {

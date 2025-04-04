@@ -2,6 +2,71 @@
 
 .header {
   padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.select {
+  position: relative;
+  user-select: none;
+  min-width: 180px;
+
+  .trigger {
+    cursor: pointer;
+  }
+
+  &.open .options {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #212830;
+    border-radius: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 0 30px rgba(#000000, 0.25);
+    z-index: 100;
+    padding: 7px 0;
+  }
+
+  .trigger {
+    display: flex;
+    align-items: center;
+    .down {
+      width: auto !important;
+      height: 11px;
+    }
+  }
+
+  .option,
+  .trigger_content {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    img {
+      border-radius: 5px;
+      margin-right: 10px;
+      width: 28px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .option.active {
+    background-color: #424f5e;
+  }
 }
 
 .bg_pattern {
