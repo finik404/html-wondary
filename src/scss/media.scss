@@ -22,6 +22,28 @@
       flex-shrink: 0;
     }
   }
+  .main {
+    .box {
+      padding: 60px 60px;
+    }
+    .content {
+      width: 60%;
+    }
+  }
+  .download {
+    margin-bottom: 100px;
+    padding-top: 0;
+    .pattern3 {
+      width: 300px;
+      left: -30px;
+      top: -100px;
+    }
+    .pattern4 {
+      width: 500px;
+      right: -30px;
+      bottom: -150px;
+    }
+  }
 }
 
 //Max-Width: 950px ================================
@@ -33,6 +55,9 @@
         right: -40px;
       }
     }
+  }
+  .policy h1 {
+    font-size: 32px;
   }
 }
 
@@ -62,6 +87,14 @@
       .screen3 {
         width: 210px;
       }
+    }
+  }
+  .main {
+    .box {
+      padding: 60px 30px;
+    }
+    .screen1 {
+      width: 210px;
     }
   }
 }
@@ -99,6 +132,8 @@
 //Max-Width: 750px ================================
 @media (max-width: 750px) {
   .download {
+    height: auto;
+    margin-bottom: 200px;
     .content {
       h1 {
         font-size: 45px;
@@ -117,6 +152,35 @@
         width: 190px;
       }
     }
+    .pattern3 {
+      width: 200px;
+      left: -30px;
+      top: -80px;
+    }
+    .pattern4 {
+      width: 400px;
+      bottom: -180px;
+    }
+  }
+  .footer {
+    .logo {
+      width: auto;
+      height: 50px;
+    }
+  }
+  .main {
+    .box {
+      padding: 60px 20px;
+    }
+    .screen1 {
+      width: 190px;
+    }
+    .content {
+      h2 {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
   }
 }
 
@@ -127,6 +191,26 @@
 //Phone ###########################################
 //Max-Width: 641px ================================
 @media (max-width: 641px) {
+  .footer {
+    .logo {
+      height: 60px;
+      margin: 0 auto 35px auto;
+    }
+    .box {
+      flex-direction: column;
+      padding-top: 210px;
+      padding-bottom: 190px;
+    }
+    .content {
+      align-items: center;
+      p {
+        text-align: center;
+      }
+      a {
+        text-align: center;
+      }
+    }
+  }
 }
 
 //Max-Width: 600px ================================
@@ -159,6 +243,7 @@
   }
   .download {
     flex-wrap: wrap;
+    margin-bottom: 120px;
     .content {
       order: 1;
       width: 100%;
@@ -185,6 +270,48 @@
         width: 210px;
       }
     }
+    .pattern3 {
+      width: 200px;
+      left: auto;
+      right: -50px;
+      top: auto;
+      bottom: -150px;
+    }
+    .pattern4 {
+      width: 400px;
+      bottom: auto;
+      top: 200px;
+      right: 110px;
+    }
+  }
+  .main {
+    .box {
+      padding: 60px 0px;
+    }
+    .screen1 {
+      width: 170px;
+    }
+    .content {
+      h2 {
+        font-size: 26px;
+        line-height: 32px;
+      }
+      .text {
+        font-size: 14px;
+      }
+      .btn {
+        padding: 10px 20px;
+      }
+    }
+  }
+  .policy {
+    margin-top: 30px;
+    h1 {
+      text-align: left;
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -204,12 +331,34 @@
     .images {
       width: 75%;
     }
+    .pattern4 {
+      right: 50px;
+    }
+  }
+  .main {
+    .screen1 {
+      display: none;
+    }
+    .content {
+      width: 100%;
+      h2 {
+        font-size: 32px;
+        line-height: 42px;
+      }
+      .text {
+        font-size: 16px;
+      }
+      .btn {
+        padding: 12px 30px;
+      }
+    }
   }
 }
 
 //Max-Width: 450px ================================
 @media (max-width: 450px) {
   .benefits {
+    margin-bottom: 60px;
     h2 {
       text-align: left;
       margin-bottom: 40px;
@@ -222,6 +371,7 @@
     width: 100%;
   }
   .download {
+    margin-bottom: 80px;
     .content {
       h1 {
         font-size: 34px;
@@ -241,6 +391,39 @@
       .screen3 {
         width: 190px;
       }
+    }
+    .pattern3 {
+      right: -100px;
+      bottom: -110px;
+    }
+    .pattern4 {
+      width: 350px;
+    }
+  }
+  .footer {
+    .logo {
+      height: 55px;
+      margin: 0 auto 30px auto;
+    }
+    .list {
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+  .main {
+    .content {
+      h2 {
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+  }
+  .policy {
+    margin-top: 30px;
+    p {
+      font-size: 14px;
+      line-height: 24px;
     }
   }
 }
