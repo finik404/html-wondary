@@ -42,6 +42,20 @@ function updateContent() {
     });
 }
 
+// Update meta
+function updateMeta() {
+    const description = document.querySelector('meta[name="description"]');
+    const keywords = document.querySelector('meta[name="keywords"]');
+
+    if (description) {
+        description.setAttribute('content', i18next.t('meta_description'));
+    }
+
+    if (keywords) {
+        keywords.setAttribute('content', i18next.t('meta_keywords'));
+    }
+}
+
 
 // Set locale on ready
 window.addEventListener("DOMContentLoaded", () => {
@@ -56,6 +70,7 @@ window.addEventListener("DOMContentLoaded", () => {
         lng: langToUse,
         resources: locales,
     }, () => {
+        updateMeta();
         updateContent();
         initSelect(langToUse);
         document.body.classList.remove("hidden-before-init");
@@ -98,7 +113,10 @@ options.forEach((option) => {
         localStorage.setItem(STORAGE_KEY, lang);
 
         // Change content
-        i18next.changeLanguage(lang, updateContent);
+        i18next.changeLanguage(lang, () => {
+            updateMeta();
+            updateContent();
+        });
     });
 });
 

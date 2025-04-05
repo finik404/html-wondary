@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <!-- Meta -->
-    @@include('./blocks/main/head.html', {
-"title": "Wondary: Учить редкие и интереcные слова",
-})
+    @@include('./blocks/main/head.html')
     <body class="hidden-before-init">
         <!-- Bg pattern -->
         <img src="./img/main_pattern.png" alt="pattern" class="bg_pattern">
@@ -17,13 +15,10 @@
                     <img src="./img/screens/learning.png" alt="screen1" class="screen screen1">
                     <!-- content -->
                     <div class="content">
-                        <p class="pretitle">Сила языка</p>
-                        <h2 data-i18n="headline"></h2>
-                        <p class="text">
-                            Приложение для тех, кто хочет говорить точнее, ярче и умнее.
-                        Никакой скуки — только интересные слова
-                        </p>
-                        <a href="#download" class="btn">Скачать</a>
+                        <p class="pretitle" data-i18n="main_pretitle"></p>
+                        <h2 data-i18n="main_title"></h2>
+                        <p class="text" data-i18n="main_text"></p>
+                        <a href="#download" class="btn" data-i18n="download"></a>
                     </div>
                 </div>
                 <!-- patterns -->
@@ -34,41 +29,53 @@
             </section>
             <!-- Benefits section -->
             <section class="benefits">
-                <h2>Почему это приложение?</h2>
-                <p class="text">Ключевые преимущества, которые делают обучение эффективным</p>
+                <h2 data-i18n="benefits_title"></h2>
+                <p class="text" data-i18n="benefits_text"></p>
                 <div class="list">
-                    @@include('./blocks/benefit.html', {
-                "icon": "./img/benefits/01.svg",
-                "title": "Большая база слов",
-                "text": "Интересные слова из множества тематических категорий",
-                })
-                @@include('./blocks/benefit.html', {
-                "icon": "./img/benefits/02.svg",
-                "title": "Подробная статистика",
-                "text": "Следите за своим прогрессом и анализируйте свою активность",
-                })
-                @@include('./blocks/benefit.html', {
-                "icon": "./img/benefits/03.svg",
-                "title": "Гибкие настройки",
-                "text": "Настройте приложение под себя для комфортного изучения",
-                })
-                @@include('./blocks/benefit.html', {
-                "icon": "./img/benefits/04.svg",
-                "title": "Различные тренировки",
-                "text": "Комбинируйте разные методы, чтобы учить слова быстрее",
-                })
+                    <div class="benefit">
+                        <div class="img">
+                            <img src="./img/benefits/01.svg" alt="benefit" />
+                        </div>
+                        <div>
+                            <h4 data-i18n="benefit1_title"></h4>
+                            <p data-i18n="benefit1_text"></p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="img">
+                            <img src="./img/benefits/02.svg" alt="benefit" />
+                        </div>
+                        <div>
+                            <h4 data-i18n="benefit2_title"></h4>
+                            <p data-i18n="benefit2_text"></p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="img">
+                            <img src="./img/benefits/03.svg" alt="benefit" />
+                        </div>
+                        <div>
+                            <h4 data-i18n="benefit3_title"></h4>
+                            <p data-i18n="benefit3_text"></p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="img">
+                            <img src="./img/benefits/04.svg" alt="benefit" />
+                        </div>
+                        <div>
+                            <h4 data-i18n="benefit4_title"></h4>
+                            <p data-i18n="benefit4_text"></p>
+                        </div>
+                    </div>
                 </div>
             </section>
             <!-- Download section -->
             <section class="download" id="download">
                 <!-- content -->
                 <div class="content">
-                    <h1>Скачать приложение</h1>
-                    <p class="text">
-                        Изучайте редкие и интересные слова в любое время и в любом месте.
-                    Скачайте Wondary на ваше устройство
-                    и начните пополнять словарный запас уже сегодня!
-                    </p>
+                    <h1 data-i18n="download_title"></h1>
+                    <p class="text" data-i18n="download_text"></p>
                     <div class="buttons">
                         @@include('./blocks/download-btn.html', {
                     "label": "Google Play",
