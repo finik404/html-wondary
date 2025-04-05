@@ -1,91 +1,110 @@
+import i18next from "i18next";
+import locales from './locales.json';
+
 const customSelect = document.querySelector(".select");
 const trigger = customSelect.querySelector(".trigger");
 const triggerContent = customSelect.querySelector(".trigger_content");
 const options = customSelect.querySelectorAll(".option");
 const STORAGE_KEY = "selected_lang";
 
-// Open select
-trigger.addEventListener("click", () => {
-  customSelect.classList.toggle("open");
+// Detect browser lang
+function detectBrowserLang() {
+    const cyrillicLanguages = [
+        "ru", // Русский
+        "be", // Белорусский
+        "uk", // Украинский
+        "kk", // Казахский
+        "ky", // Киргизский
+        "uz", // Узбекский
+        "tg", // Таджикский
+        "tk", // Туркменский
+        "az", // Азербайджанский
+        "hy", // Армянский
+        "ro", // Румынский (Молдова)
+    ];
+
+    const langs = (navigator.languages || [navigator.language]).map(lang => lang.slice(0, 2));
+
+    if (langs.find(lang => cyrillicLanguages.includes(lang))) return "ru";
+    if (langs.includes("fr")) return "fr";
+    if (langs.includes("es")) return "es";
+    if (langs.includes("de")) return "de";
+    if (langs.includes("zh")) return "zh";
+
+    return "en";
+}
+
+// Update content
+function updateContent() {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.innerHTML = i18next.t(key);
+    });
+}
+
+
+// Set locale on ready
+window.addEventListener("DOMContentLoaded", () => {
+    let savedLang = localStorage.getItem(STORAGE_KEY);
+    const langToUse = savedLang || detectBrowserLang();
+
+    // Save lang
+    if (!savedLang) localStorage.setItem(STORAGE_KEY, langToUse);
+
+    // Init i18next
+    i18next.init({
+        lng: langToUse,
+        resources: locales,
+    }, () => {
+        updateContent();
+        initSelect(langToUse);
+        document.body.classList.remove("hidden-before-init");
+    });
 });
 
+// Init select lang
+function initSelect(lang) {
+    const matchedOption = Array.from(options).find(option => {
+        const img = option.querySelector("img");
+        return img && img.getAttribute("alt") === lang;
+    });
+
+    if (matchedOption) {
+        triggerContent.innerHTML = matchedOption.innerHTML;
+        options.forEach(opt => opt.classList.remove("active"));
+        matchedOption.classList.add("active");
+    }
+}
+
+// Open select
+trigger.addEventListener("click", () => {
+    customSelect.classList.toggle("open");
+});
+
+// Change lang
 options.forEach((option) => {
-  option.addEventListener("click", () => {
-    // Change option in trigger
-    triggerContent.innerHTML = option.innerHTML;
-    customSelect.classList.remove("open");
+    option.addEventListener("click", () => {
+        // Lang
+        const lang = option.querySelector("img").getAttribute("alt");
+        if (!lang) return;
 
-    // Add class to active option
-    options.forEach((opt) => opt.classList.remove("active"));
-    option.classList.add("active");
+        // Change option
+        triggerContent.innerHTML = option.innerHTML;
+        customSelect.classList.remove("open");
+        options.forEach((opt) => opt.classList.remove("active"));
+        option.classList.add("active");
 
-    // Save to localStorage
-    const lang = option.querySelector("img").getAttribute("alt");
-    if (lang) localStorage.setItem(STORAGE_KEY, lang);
-  });
+        // Save to localStorage
+        localStorage.setItem(STORAGE_KEY, lang);
+
+        // Change content
+        i18next.changeLanguage(lang, updateContent);
+    });
 });
 
 // Close select when click out select
 document.addEventListener("click", (e) => {
-  if (!customSelect.contains(e.target)) {
-    customSelect.classList.remove("open");
-  }
-});
-
-// On ready
-window.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem(STORAGE_KEY);
-
-  let langToSelect = savedLang;
-
-  // Set lang from browser lang
-  if (langToSelect) {
-    const cyrillicLanguages = [
-      "ru", // Русский
-      "be", // Белорусский
-      "uk", // Украинский
-      "kk", // Казахский
-      "ky", // Киргизский
-      "uz", // Узбекский
-      "tg", // Таджикский
-      "tk", // Туркменский
-      "az", // Азербайджанский
-      "hy", // Армянский
-      "ro", // Румынский (Молдова)
-    ];
-
-    const browserLang = navigator.language.slice(0, 2);
-    console.log(navigator.language);
-
-    if (cyrillicLanguages.includes(browserLang)) {
-      langToSelect = "ru";
-    } else if (browserLang === "fr") {
-      langToSelect = "fr";
-    } else if (browserLang === "es") {
-      langToSelect = "es";
-    } else if (browserLang === "de") {
-      langToSelect = "de";
-    } else if (browserLang === "zh") {
-      langToSelect = "zh";
-    } else {
-      langToSelect = "en";
+    if (!customSelect.contains(e.target)) {
+        customSelect.classList.remove("open");
     }
-
-    // Save to localStorage
-    localStorage.setItem(STORAGE_KEY, langToSelect);
-  }
-
-  // Set active lang
-  const matchedOption = Array.from(options).find((option) => {
-    const img = option.querySelector("img");
-    return img && img.getAttribute("alt") === savedLang;
-  });
-  if (matchedOption) {
-    triggerContent.innerHTML = matchedOption.innerHTML;
-    options.forEach((opt) => opt.classList.remove("active"));
-    matchedOption.classList.add("active");
-  }
-
-  // Remove loading
-  document.body.classList.remove("hidden-before-init");
 });

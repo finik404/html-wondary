@@ -1,0 +1,32 @@
+{
+  "ru": {
+    "translation": {
+      "headline": "Запоминай редкие слова с пользой и интересом"
+    }
+  },
+  "en": {
+    "translation": {
+      "headline": "Remember rare words with meaning and interest"
+    }
+  },
+  "fr": {
+    "translation": {
+      "headline": "Mémorisez des mots rares avec plaisir et intérêt"
+    }
+  },
+  "es": {
+    "translation": {
+      "headline": "Recuerda palabras raras con utilidad e interés"
+    }
+  },
+  "de": {
+    "translation": {
+      "headline": "Merke dir seltene Wörter mit Nutzen und Interesse"
+    }
+  },
+  "zh": {
+    "translation": {
+      "headline": "有趣而有益地记住罕见的单词"
+    }
+  }
+}

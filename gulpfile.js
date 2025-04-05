@@ -13,11 +13,11 @@ import rename from "gulp-rename"; // Переименование файлов
 import cleanCss from "gulp-clean-css"; // Сжатие CSS файла
 import autoprefixer from "gulp-autoprefixer"; // Добавление вендорных префиксов
 import groupCssMediaQueries from "gulp-group-css-media-queries"; // Группировка медиа запросов
-import minify from "gulp-minify"; // Минифицируем js
 import imagemin from "gulp-imagemin"; // Минифицируем картинки
 import fs from "fs"; // Для шрифтов
 import fonter from "gulp-fonter"; // Для шрифтов
 import ttf2woff2 from "gulp-ttf2woff2"; // Преобразование ttf в woff
+import webpack from "webpack-stream"; // Использование ES6 синтаксиса
 
 const sass = gulpSass(dartSass);
 
@@ -122,12 +122,14 @@ const scss = () => {
 // Функция преобразования js
 const js = () => {
   return gulp
-    .src(path.src.js, { sourcemaps: true })
-    .pipe(fileinclude())
-    .pipe(minify())
-    .pipe(rename("script.min.js"))
-    .pipe(gulp.dest(path.build.js))
-    .pipe(browserSync.stream());
+      .src(path.src.js, {sourcemaps: true})
+      .pipe(webpack({
+        mode: 'development', output: {
+          filename: 'script.js'
+        }
+      }))
+      .pipe(gulp.dest(path.build.js))
+      .pipe(browserSync.stream());
 };
 
 // Функция преобразования картинок
