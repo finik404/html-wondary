@@ -7,6 +7,14 @@ const triggerContent = customSelect.querySelector(".trigger_content");
 const options = customSelect.querySelectorAll(".option");
 const STORAGE_KEY = "selected_lang";
 
+document.getElementById('scrollBtn').addEventListener('click', function () {
+    const target = document.getElementById('download');
+    if (target) {
+        target.scrollIntoView({behavior: 'smooth'});
+    }
+});
+
+
 // Detect browser lang
 function detectBrowserLang() {
     const cyrillicLanguages = [
@@ -39,6 +47,30 @@ function updateContent() {
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         el.innerHTML = i18next.t(key);
+    });
+
+    // 👇 Show RuStore only on russian
+    const rustoreBtn = document.querySelector(".rustore-btn");
+    if (rustoreBtn) {
+        if (i18next.language.startsWith("ru")) {
+            rustoreBtn.classList.remove("hidden");
+        } else {
+            rustoreBtn.classList.add("hidden");
+        }
+    }
+
+    // Add class to option
+    if (i18next.language.startsWith("ru")) {
+        trigger.parentElement.classList.add("ru");
+    } else {
+        trigger.parentElement.classList.remove("ru");
+    }
+
+    // Change images
+    document.querySelectorAll('[data-lang-src]').forEach(img => {
+        const template = img.getAttribute('data-lang-src');
+        const finalSrc = template.replace('{lang}', i18next.language);
+        img.setAttribute('src', finalSrc);
     });
 }
 

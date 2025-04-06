@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <!-- Meta -->
-    @@include('./blocks/main/head.html')
+    @@include('./blocks/main/head.html', {
+    "title": "meta_title",
+    })
     <body class="hidden-before-init">
-        <!-- Bg pattern -->
-        <img src="./img/main_pattern.png" alt="pattern" class="bg_pattern">
         <!-- Container -->
         <div class="container">
             @@include('./blocks/header.html')
@@ -12,13 +12,17 @@
             <section class="main">
                 <div class="box">
                     <!-- img -->
-                    <img src="./img/screens/learning.png" alt="screen1" class="screen screen1">
+                    <img data-lang-src="img/screens/{lang}/learning.png"
+                         src="img/screens/ru/learning.png"
+                         alt="screen1"
+                         class="screen screen1"
+                    >
                     <!-- content -->
                     <div class="content">
                         <p class="pretitle" data-i18n="main_pretitle"></p>
                         <h2 data-i18n="main_title"></h2>
                         <p class="text" data-i18n="main_text"></p>
-                        <a href="#download" class="btn" data-i18n="download"></a>
+                        <button class="btn" id="scrollBtn" data-i18n="download"></button>
                     </div>
                 </div>
                 <!-- patterns -->
@@ -77,20 +81,34 @@
                     <h1 data-i18n="download_title"></h1>
                     <p class="text" data-i18n="download_text"></p>
                     <div class="buttons">
-                        @@include('./blocks/download-btn.html', {
-                    "label": "Google Play",
-                    "icon": "./img/stores/google-play.svg",
-                    })
-                        <!-- @@include('./blocks/download-btn.html', {
-                    "label": "RuStore",
-                    "icon": "./img/stores/rustore.svg",
-                    }) -->
+                        <a href="#" class="download_btn">
+                            <img src="./img/stores/google-play.svg" alt="Google Play" />
+                            <div>
+                                <p class="download_btn-pretitle" data-i18n="available"></p>
+                                <p class="download_btn-label">Google Play</p>
+                            </div>
+                        </a>
+                        <a href="#" class="download_btn rustore-btn">
+                            <img src="./img/stores/rustore.svg" alt="RuStore" />
+                            <div>
+                                <p class="download_btn-pretitle" data-i18n="available"></p>
+                                <p class="download_btn-label">RuStore</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <!-- images -->
                 <div class="images">
-                    <img src="./img/screens/stats.png" alt="screen2" class="screen screen2">
-                    <img src="./img/screens/categories.png" alt="screen3" class="screen screen3">
+                    <img data-lang-src="img/screens/{lang}/stats.png"
+                         src="img/screens/ru/stats.png"
+                         alt="screen2"
+                         class="screen screen2"
+                    >
+                    <img data-lang-src="img/screens/{lang}/categories.png"
+                         src="img/screens/ru/categories.png"
+                         alt="screen3"
+                         class="screen screen3"
+                    >
                 </div>
                 <!-- patterns -->
                 <div class="patterns">

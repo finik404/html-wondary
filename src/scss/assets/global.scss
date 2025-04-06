@@ -1,5 +1,4 @@
 @use "variables" as vars;
-
 // Tags
 html {
   overflow-x: hidden;
@@ -25,11 +24,14 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: vars.$white;
-  background: vars.$bg;
+  background-color: vars.$bg;
   &.hidden-before-init {
     opacity: 0;
     visibility: hidden;
   }
+  background-image: url('../img/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -70,7 +72,11 @@ a {
 }
 
 .disabled {
-  pointer-events: none;
+  pointer-events: none !important;
+}
+
+.hidden {
+  display: none !important;
 }
 
 // Модальные окна
@@ -89,3 +95,4 @@ a {
   top: 0;
   right: 0;
 }
+

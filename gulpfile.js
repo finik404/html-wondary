@@ -9,7 +9,6 @@ import fileinclude from "gulp-file-include"; // Соединение файло�
 import del from "del"; // Удаление файлов
 import * as dartSass from "sass"; // Преобразование sass в css
 import gulpSass from "gulp-sass";
-import rename from "gulp-rename"; // Переименование файлов
 import cleanCss from "gulp-clean-css"; // Сжатие CSS файла
 import autoprefixer from "gulp-autoprefixer"; // Добавление вендорных префиксов
 import groupCssMediaQueries from "gulp-group-css-media-queries"; // Группировка медиа запросов
@@ -111,10 +110,7 @@ const scss = () => {
         cascade: true,
       })
     )
-    .pipe(rename("style.css"))
-    .pipe(gulp.dest(path.build.css))
     .pipe(cleanCss())
-    .pipe(rename("style.min.css"))
     .pipe(gulp.dest(path.build.css))
     .pipe(browserSync.stream());
 };

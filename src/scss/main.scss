@@ -9,10 +9,9 @@
 .select {
   position: relative;
   user-select: none;
-  min-width: 180px;
-
-  .trigger {
-    cursor: pointer;
+  min-width: 150px;
+  &.ru {
+    min-width: 175px;
   }
 
   &.open .options {
@@ -41,7 +40,9 @@
 
   .trigger {
     display: flex;
+    cursor: pointer;
     align-items: center;
+    justify-content: space-between;
     .down {
       width: auto !important;
       height: 11px;
@@ -67,14 +68,6 @@
   .option.active {
     background-color: #424f5e;
   }
-}
-
-.bg_pattern {
-  position: absolute;
-  left: -50px;
-  top: -400px;
-  z-index: -50;
-  width: 200%;
 }
 
 .main {
@@ -201,7 +194,8 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin-bottom: 200px;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
   height: 600px;
   z-index: 10;
   padding-top: 200px;
@@ -249,8 +243,8 @@
 
   .pattern4 {
     position: absolute;
-    right: -120px;
-    bottom: -265px;
+    right: -20px;
+    bottom: -235px;
     z-index: -10;
   }
 }

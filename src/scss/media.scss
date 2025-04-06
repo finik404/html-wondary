@@ -1,19 +1,5 @@
 @use "./assets/variables.scss" as vars;
 
-//Min-Width: 3000px ================================
-@media (min-width: 3000px) {
-  .bg_pattern {
-    display: none;
-  }
-}
-
-//Max-Width: 3000px ================================
-@media (max-width: 3000px) {
-  .bg_pattern {
-    top: -1240px;
-  }
-}
-
 //Min-Width: 2500px ================================
 @media (min-width: 2500px) {
   .footer {
@@ -28,15 +14,11 @@
   }
 }
 
-//Max-Width: 2500px ================================
-@media (max-width: 2500px) {
-  .bg_pattern {
-    top: -950px;
-  }
-}
-
 //Min-Width: 2000px ================================
 @media (min-width: 2000px) {
+  body {
+    background-image: none;
+  }
   .footer {
     .box {
       padding-top: 250px;
@@ -45,24 +27,6 @@
       margin-top: -100px;
     }
   }
-}
-
-//Max-Width: 2000px ================================
-@media (max-width: 2000px) {
-  .bg_pattern {
-    top: -650px;
-  }
-}
-
-//Max-Width: 1500px ================================
-@media (max-width: 1500px) {
-  .bg_pattern {
-    top: -350px;
-  }
-}
-
-//Max-Width: 1279px ================================
-@media (max-width: 1279px) {
 }
 
 //Max-Width: 1200px ================================
@@ -78,21 +42,8 @@
   }
 }
 
-//Max-Width: 1150px ================================
-@media (max-width: 1150px) {
-}
-
-//Max-Width: 1100px ================================
-@media (max-width: 1100px) {
-}
-
 //Max-Width: 1060px ================================
 @media (max-width: 1060px) {
-  .bg_pattern {
-    left: -450px;
-    top: -600px;
-    width: 300%;
-  }
   .benefit {
     width: calc(50% - 15px);
     .img {
@@ -114,8 +65,9 @@
     }
   }
   .download {
+    padding-bottom: 100px;
     margin-bottom: 100px;
-    padding-top: 0;
+    padding-top: 100px;
     .pattern3 {
       width: 300px;
       left: -30px;
@@ -124,7 +76,7 @@
     .pattern4 {
       width: 500px;
       right: -30px;
-      bottom: -150px;
+      bottom: -110px;
     }
   }
 }
@@ -144,12 +96,12 @@
   }
 }
 
-//Max-Width: 900px ================================
-@media (max-width: 900px) {
-}
-
 //Max-Width: 850px ================================
 @media (max-width: 850px) {
+  body {
+    background-size: 120%;
+    background-position: top center;
+  }
   .download {
     .content {
       width: 55%;
@@ -222,14 +174,14 @@
 
 //Max-Width: 750px ================================
 @media (max-width: 750px) {
-  .bg_pattern {
-    left: -200px;
-    top: -200px;
-    width: 300%;
+  .benefits {
+    margin-bottom: 50px;
   }
   .download {
     height: auto;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
     .content {
       h1 {
         font-size: 45px;
@@ -255,7 +207,7 @@
     }
     .pattern4 {
       width: 400px;
-      bottom: -180px;
+      bottom: -100px;
     }
   }
   .footer {
@@ -294,10 +246,6 @@
   }
 }
 
-//Max-Width: 700px ================================
-@media (max-width: 700px) {
-}
-
 //Phone ###########################################
 //Max-Width: 641px ================================
 @media (max-width: 641px) {
@@ -308,6 +256,7 @@
     }
     .box {
       flex-direction: column;
+      align-items: center;
     }
     .content {
       align-items: center;
@@ -351,11 +300,10 @@
   }
   .download {
     flex-wrap: wrap;
-    margin-bottom: 80px;
+    margin-bottom: 0px;
     .content {
       order: 1;
       width: 100%;
-
       h1 {
         font-size: 45px;
         line-height: 45px;
@@ -383,12 +331,12 @@
       left: auto;
       right: -50px;
       top: auto;
-      bottom: -150px;
+      bottom: -90px;
     }
     .pattern4 {
       width: 400px;
       bottom: auto;
-      top: 200px;
+      top: 240px;
       right: 110px;
     }
   }
@@ -426,14 +374,10 @@
   }
 }
 
-//Max-Width: 550px ================================
-@media (max-width: 550px) {
-}
-
 //Max-Width: 500px ================================
 @media (max-width: 500px) {
-  .bg_pattern {
-    display: none;
+  body {
+    background-image: none;
   }
   .download {
     .content {
@@ -489,7 +433,6 @@
 //Max-Width: 450px ================================
 @media (max-width: 450px) {
   .benefits {
-    margin-bottom: 90px;
     h2 {
       text-align: left;
       margin-bottom: 40px;
@@ -502,7 +445,6 @@
     width: 100%;
   }
   .download {
-    margin-bottom: 30px;
     .content {
       h1 {
         font-size: 34px;
@@ -560,10 +502,6 @@
   }
 }
 
-//Max-Width: 400px ================================
-@media (max-width: 400px) {
-}
-
 //Max-Width: 359px ================================
 @media (max-width: 359px) {
   .benefits {
@@ -580,8 +518,4 @@
       right: 0;
     }
   }
-}
-
-//Max-Width: 340px ================================
-@media (max-width: 340px) {
 }
