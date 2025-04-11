@@ -5,20 +5,21 @@ const customSelect = document.querySelector(".select");
 const trigger = customSelect.querySelector(".trigger");
 const triggerContent = customSelect.querySelector(".trigger_content");
 const options = customSelect.querySelectorAll(".option");
+const scrollBtn = document.getElementById('scrollBtn');
 const STORAGE_KEY = "selected_lang";
 
-document.getElementById('scrollBtn').addEventListener('click', function () {
-    const target = document.getElementById('download');
-    if (target) {
-        target.scrollIntoView({behavior: 'smooth'});
-    }
-});
-
+if (scrollBtn) {
+    scrollBtn.addEventListener('click', function () {
+        const target = document.getElementById('download');
+        if (target) {
+            target.scrollIntoView({behavior: 'smooth'});
+        }
+    });
+}
 
 // Detect browser lang
 function detectBrowserLang() {
-    const cyrillicLanguages = [
-        "ru", // Русский
+    const cyrillicLanguages = ["ru", // Русский
         "be", // Белорусский
         "uk", // Украинский
         "kk", // Казахский
@@ -60,7 +61,7 @@ function updateContent() {
     }
 
     // Add class to option
-    if (i18next.language.startsWith("ru")) {
+    if (i18next.language.startsWith("ru") && trigger) {
         trigger.parentElement.classList.add("ru");
     } else {
         trigger.parentElement.classList.remove("ru");
@@ -88,7 +89,6 @@ function updateMeta() {
     }
 }
 
-
 // Set locale on ready
 window.addEventListener("DOMContentLoaded", () => {
     let savedLang = localStorage.getItem(STORAGE_KEY);
@@ -99,8 +99,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Init i18next
     i18next.init({
-        lng: langToUse,
-        resources: locales,
+        lng: langToUse, resources: locales,
     }, () => {
         updateMeta();
         updateContent();
@@ -116,7 +115,7 @@ function initSelect(lang) {
         return img && img.getAttribute("alt") === lang;
     });
 
-    if (matchedOption) {
+    if (matchedOption && triggerContent && options) {
         triggerContent.innerHTML = matchedOption.innerHTML;
         options.forEach(opt => opt.classList.remove("active"));
         matchedOption.classList.add("active");
@@ -124,16 +123,18 @@ function initSelect(lang) {
 }
 
 // Open select
-trigger.addEventListener("click", () => {
-    customSelect.classList.toggle("open");
-});
+if (trigger) {
+    trigger.addEventListener("click", () => {
+        customSelect.classList.toggle("open");
+    });
+}
 
 // Change lang
 options.forEach((option) => {
     option.addEventListener("click", () => {
         // Lang
         const lang = option.querySelector("img").getAttribute("alt");
-        if (!lang) return;
+        if (!lang || !customSelect || !customSelect) return;
 
         // Change option
         triggerContent.innerHTML = option.innerHTML;

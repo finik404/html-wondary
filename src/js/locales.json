@@ -35,7 +35,7 @@
       "available": "Доступно в",
       "": "Footer section ----------------------------------------",
       "policy": "Политика конфиденциальности",
-      "support": "По всем вопросам пишите на <a href='mailto:support@wondary.digital'>support@wondary.digital</a>",
+      "support": "По всем вопросам пишите на <a href='mailto:support@wondary.digital?subject=Wondary%20%7C%20Поддержка'>support@wondary.digital</a>",
       "": "Policy ----------------------------------------",
       "policy_full": "Policy"
     }
@@ -76,7 +76,7 @@
       "available": "Available on",
       "": "Footer section ----------------------------------------",
       "policy": "Privacy Policy",
-      "support": "For any inquiries, contact us at <a href='mailto:support@wondary.digital'>support@wondary.digital</a>",
+      "support": "For any inquiries, contact us at <a href='mailto:support@wondary.digital?subject=Wondary%20%7C%20Support'>support@wondary.digital</a>",
       "": "Policy ----------------------------------------",
       "policy_full": "Policy"
     }
@@ -117,7 +117,7 @@
       "available": "Disponible en",
       "": "Footer section ----------------------------------------",
       "policy": "Política de privacidad",
-      "support": "Para cualquier consulta, escríbenos a <a href='mailto:support@wondary.digital'>support@wondary.digital</a>",
+      "support": "Para cualquier consulta, escríbenos a <a href='mailto:support@wondary.digital?subject=Wondary%20%7C%20Soporte'>support@wondary.digital</a>",
       "": "Policy ----------------------------------------",
       "policy_full": "Policy"
     }
@@ -158,7 +158,7 @@
       "available": "Disponible sur",
       "": "Footer section ----------------------------------------",
       "policy": "Politique de confidentialité",
-      "support": "Pour toute question, contactez-nous à <a href='mailto:support@wondary.digital'>support@wondary.digital</a>",
+      "support": "Pour toute question, contactez-nous à <a href='mailto:support@wondary.digital?subject=Wondary%20%7C%20Assistance'>support@wondary.digital</a>",
       "": "Policy ----------------------------------------",
       "policy_full": "Policy"
     }
@@ -199,7 +199,7 @@
       "available": "Verfügbar auf",
       "": "Footer section ----------------------------------------",
       "policy": "Datenschutzrichtlinie",
-      "support": "Bei Fragen schreiben Sie an <a href='mailto:support@wondary.digital'>support@wondary.digital</a>",
+      "support": "Bei Fragen schreiben Sie an <a href='mailto:support@wondary.digital?subject=Wondary%20%7C%20Support'>support@wondary.digital</a>",
       "": "Policy ----------------------------------------",
       "policy_full": "Policy"
     }
@@ -240,7 +240,7 @@
       "available": "可在以下平台获取",
       "": "Footer section ----------------------------------------",
       "policy": "隐私政策",
-      "support": "如有任何问题，请发送邮件至 <a href='mailto:support@wondary.digital'>support@wondary.digital</a>",
+      "support": "如有任何问题，请发送邮件至 <a href='mailto:support@wondary.digital?subject=Wondary%20%7C%20支持'>support@wondary.digital</a>",
       "": "Policy ----------------------------------------",
       "policy_full": "Policy"
     }
