@@ -25,13 +25,16 @@ body {
   line-height: 24px;
   color: vars.$white;
   background-color: vars.$bg;
+  background-image: url('../img/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   &.hidden-before-init {
     opacity: 0;
     visibility: hidden;
   }
-  background-image: url('../img/bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
+  &.no-img {
+    background-image: none;
+  }
 }
 
 a {

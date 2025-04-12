@@ -293,12 +293,43 @@
   margin-top: 60px;
   margin-bottom: 30px;
   h1 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
-    margin-bottom: 45px;
-    text-align: center;
+    margin-bottom: 30px;
   }
   p {
-    line-height: 32px;
+    margin-bottom: 15px;
+  }
+  h5 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  ul {
+  }
+  li {
+    list-style-type: disc;
+    margin-left: 30px;
+    padding-left: 10px;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+  a {
+    color: vars.$main;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  b {
+    font-weight: 700;
+  }
+  hr {
+    margin-top: 35px;
+    margin-bottom: 40px;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid rgba(vars.$white, 0.5);
   }
 }

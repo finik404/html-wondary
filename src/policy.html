@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Meta -->
-    @@include('./blocks/main/head.html', {
-    "title": "meta_policy_title",
-    })
-    <body class="hidden-before-init">
-        <div class="container">
-            @@include('./blocks/header.html')
-            <!-- Policy section -->
-            <section class="policy">
-                <h1 data-i18n="policy"></h1>
-                <p data-i18n="policy_full"></p>
-            </section>
-        </div>
-        @@include('./blocks/footer.html')
-        <!-- Scripts -->
-        @@include('./blocks/main/js.html')
-    </body>
+<!-- Meta -->
+@@include('./blocks/main/head.html', {
+"title": "meta_policy_title",
+})
+<body class="hidden-before-init no-img">
+<div class="container">
+    @@include('./blocks/header.html')
+    <!-- Policy section -->
+    <section class="policy">
+        <h1 data-i18n="policy"></h1>
+        <div data-i18n="policy_full"></div>
+    </section>
+</div>
+@@include('./blocks/footer.html')
+<!-- Scripts -->
+@@include('./blocks/main/js.html')
+</body>
 </html>
